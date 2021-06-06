@@ -98,5 +98,20 @@
 // ____________ canActivate
 // 37 в деактиватор/активатор.сервис вносимо метод canActivate в експорті імплементуємо інтерфейс
 // 38 в апп.модуль внести в path - canActivate: [DeactivatorService]
+// ___________ comments
+// 39 дані отримуються з сервісу а зробити так щоб отримувались ще до того як компонента зрендириться
+//    в апп.модуль в path додамо прошарок resolve який приймає об"єкт з параметром дата і відпрацьовує resolveService
+// 40 створимо ResolveService
+// 41 імпломентуєм інтерфейс який буде реалізовувати метод резолв який має щось повернути
+// 42 щоб для прикладу була затримка : return new Promise(res => setTimeout(() => {
+//       console.log('hello')
+//       res(true);
+//     }, 5000));
+// 43 доки не пройде 5 сек не отримаємо відповідь. Як варіант в експорт впровадим Resolve<Observable<any[]>> певного масиву
+//    в конструктор впровадимо private httpClient:HttpClient і в resolve будемо повертати (прибираємо приклад) і ставим
+//    return this.httpClient.get<any[]>('https://jsonplaceholder.typicode.com/comments');
+// 44 дані які ми отримали з апі зберігаються в апп.модуль в resolve: {data:ResolveService}} (при переході на урлу кажемо що ResolveService має відпрацювати і дані які отримає
+//    вкладе в resolve: {data:ResolveService}}) а цю змінну можем відхопити на CommentsComponent
+// 45 перейдемо на CommentsComponent та впровадимо private activateRoute: ActivatedRoute викличемо this.activateRoute.data. та підпишемся
 
 
