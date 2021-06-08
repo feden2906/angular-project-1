@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {User} from "../../models/User";
+import {User} from "../../models";
+
 
 @Component({
   selector: 'app-user-details',
   templateUrl: './user-details.component.html',
   styleUrls: ['./user-details.component.css']
 })
-export class UserDetailsComponent implements OnInit {
+export class UserDetailsComponent {
 
   user: User
 
@@ -18,7 +19,6 @@ export class UserDetailsComponent implements OnInit {
       console.log(this.user);
     })
   }
-  ngOnInit(): void {
-  }
+
 
 }

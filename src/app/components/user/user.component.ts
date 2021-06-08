@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {User} from "../../models/User";
+import {Component, Input} from '@angular/core';
+import {User} from "../../models";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
@@ -7,15 +7,13 @@ import {ActivatedRoute, Router} from "@angular/router";
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent implements OnInit {
+export class UserComponent {
 
   @Input()
   user: User;
 
   constructor(private router: Router, private activateRoute: ActivatedRoute) { }
 
-  ngOnInit(): void {
-  }
 
   goToDetails(): void {
     // console.log(this.user)

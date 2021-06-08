@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {Post} from "../../models/Post";
-import {PostsService} from "../../services/posts.service";
+import {Post} from "../../models";
+import {PostsService} from "../../services";
+
+
 
 @Component({
   selector: 'app-post-details',
   templateUrl: './post-details.component.html',
   styleUrls: ['./post-details.component.css']
 })
-export class PostDetailsComponent implements OnInit {
+export class PostDetailsComponent {
 
   post: Post
 
@@ -19,9 +21,6 @@ export class PostDetailsComponent implements OnInit {
       console.log(params.id);
       this.postService.getPost(params.id).subscribe(value => this.post = value);
     })
-  }
-
-  ngOnInit(): void {
   }
 
 }
